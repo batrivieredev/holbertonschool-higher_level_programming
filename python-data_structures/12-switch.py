@@ -1,5 +1,6 @@
 #!/usr/bin/python3
-a = 89
-b = 10
+a = 10
+b = 89
+# Switch the values of a and b
 a, b = b, a
-print("a={:d} - b={:d}".format(a, b))
+print("a={} - b={}".format(a, b))
