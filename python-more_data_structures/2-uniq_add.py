@@ -1,7 +1,7 @@
-    #!/usr/bin/python3
+#!/usr/bin/python3
 
 def uniq_add(my_list=[]):
-    # Create a set to store unique values
-    unique_integers = set(my_list)
-    # Sum all the unique_integers)
-    return sum(unique_integers)
+    new_list = set()
+    for i in my_list:
+        new_list.add(i)
+    return sum(new_list)
