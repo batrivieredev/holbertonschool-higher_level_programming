@@ -20,7 +20,7 @@ def add_integer(a, b=98):
     a: The first number (int or float).
     b: The second number (int or float), defaults to 98.
 
-    Returns:
+    Returns:    
     The sum of a and b as an integer.
 
     Raises:
