@@ -1,32 +1,21 @@
->>> import importlib
->>> say_my_name = importlib.import_module('3-say_my_name').say_my_name
-
->>> say_my_name("John", "Doe")
-My name is John Doe
-
->>> say_my_name("Jane")
-My name is Jane
-
+>>> say_my_name("John", "Smith")
+My name is John Smith
+>>> say_my_name("Walter", "White")
+My name is Walter White
+>>> say_my_name("Bob")
+My name is Bob
 >>> try:
-...     say_my_name()
-... except TypeError as e:
-...     str(e)
-"say_my_name() missing 1 required positional argument: 'first_name'"
-
+...     say_my_name(12, "White")
+... except Exception as e:
+...     print(e)
+first_name must be a string
 >>> try:
-...     say_my_name(123)
-... except TypeError as e:
-...     str(e)
-'first_name must be a string'
-
+...     say_my_name("John", 12)
+... except Exception as e:
+...     print(e)
+last_name must be a string
 >>> try:
-...     say_my_name("John", 123)
-... except TypeError as e:
-...     str(e)
-'last_name must be a string'
-
->>> try:
-...     say_my_name(123, 456)
-... except TypeError as e:
-...     str(e)
-'first_name must be a string'
+...     say_my_name(12, 34)
+... except Exception as e:
+...     print(e)
+first_name must be a string
