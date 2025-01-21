@@ -1,32 +1,43 @@
->>> from importlib import import_module
->>> add_integer = import_module('0-add_integer').add_integer
->>> add_integer(1, 2)
-3
->>> add_integer(100, -2)
-98
->>> add_integer(2)
-100
->>> add_integer(100.3, -2)
-98
->>> add_integer(4, "School")
-Traceback (most recent call last):
-    ...
-TypeError: b must be an integer
->>> add_integer(None)
+>>> add_integer = __import__('0-add_integer').add_integer
+
+>>> add_integer(10, 20)
+30
+
+>>> add_integer(10)
+108
+
+>>> add_integer(10.5, 20.7)
+30
+
+>>> add_integer(5.9, 2)
+7
+
+>>> add_integer("10", 20)
 Traceback (most recent call last):
     ...
 TypeError: a must be an integer
->>> add_integer(float('nan'), 1)
+
+>>> add_integer(10, "20")
 Traceback (most recent call last):
     ...
-ValueError: a cannot be NaN
+TypeError: b must be an integer
+
+>>> add_integer(float('inf'), 1)
+Traceback (most recent call last):
+    ...
+OverflowError: cannot convert float infinity to integer
 
 >>> add_integer(1, float('inf'))
 Traceback (most recent call last):
     ...
-OverflowError: b is too large to be converted to an integer
+OverflowError: cannot convert float infinity to integer
 
->>> add_integer(1e400, 1)  # Equivalent to inf
+>>> add_integer(float('nan'), 1)
 Traceback (most recent call last):
     ...
-OverflowError: a is too large to be converted to an integer
+ValueError: cannot convert float NaN to integer
+
+>>> add_integer(1, float('nan'))
+Traceback (most recent call last):
+    ...
+ValueError: cannot convert float NaN to integer

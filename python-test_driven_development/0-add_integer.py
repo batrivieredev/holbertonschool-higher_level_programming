@@ -1,41 +1,34 @@
 #!/usr/bin/python3
+
 """
-Ce module fournit une fonction `add_integer` qui additionne deux entiers ou
-flottants, en les convertissant en entiers si nécessaire.
+This module provides a function to add two integers or
+floats after converting them to integers.
+
+The `add_integer` function takes two parameters, `a` and `b`,
+which can be integers or floats.
+The function casts these parameters to integers
+and returns their sum. If the parameters are not of type integer or float,
+a TypeError is raised.
 """
 
 
 def add_integer(a, b=98):
-    """Additionne deux entiers ou flottants,
-      en les convertissant en entiers si nécessaire.
+    """
+    Adds two numbers after converting them to integers.
 
-    Args:
-        a (int ou float) : Le premier nombre.
-        b (int ou float, optionnel) : Le deuxième nombre.
-        Par défaut, il est égal à 98.
-
-    Raises:
-        TypeError : Si `a` ou `b` n'est ni un entier ni un flottant.
+    Parameters:
+    a: The first number (int or float).
+    b: The second number (int or float), defaults to 98.
 
     Returns:
-        int : La somme de `a` et `b` sous forme d'entier.
+    The sum of a and b as an integer.
+
+    Raises:
+    TypeError: If a or b are not integers or floats.
     """
     if not isinstance(a, (int, float)):
-        raise TypeError("a doit être un entier")
+        raise TypeError("a must be an integer")
     if not isinstance(b, (int, float)):
-        raise TypeError("b doit être un entier")
+        raise TypeError("b must be an integer")
 
-    # Vérification des valeurs NaN
-    if isinstance(a, float) and a != a:  # Vérification NaN
-        raise ValueError("a ne peut pas être NaN")
-    if isinstance(b, float) and b != b:  # Vérification NaN
-        raise ValueError("b ne peut pas être NaN")
-
-    # Vérification du dépassement de capacité pour les flottants (infini)
-    if isinstance(a, float) and (a == float('inf') or a == -float('inf')):
-        raise OverflowError("a est trop grand pour être converti en entier")
-    if isinstance(b, float) and (b == float('inf') or b == -float('inf')):
-        raise OverflowError("b est trop grand pour être converti en entier")
-
-    # Conversion en int après validation
-    return int(a) + int(b)
+    return (int(a) + int(b))
