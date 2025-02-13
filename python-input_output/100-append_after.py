@@ -7,12 +7,12 @@ def append_after(filename="", search_string="", new_string=""):
     :param search_string: The string to search for in each line.
     :param new_string: The string to insert after each matching line.
     """
-    with open(filename, "r") as file:
+    with open(filename, "r", encoding="utf-8") as file:
         lines = file.readlines()
     
-    with open(filename, "w") as file:
+    with open(filename, "w", encoding="utf-8") as file:
         for line in lines:
             file.write(line)
             if search_string in line:
-                file.write(new_string)
+                file.write(new_string if new_string.endswith("\n") else new_string + "\n")
 
