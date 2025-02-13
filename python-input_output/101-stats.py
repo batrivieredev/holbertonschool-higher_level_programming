@@ -37,9 +37,10 @@ def print_stats(total_size, status_counts):
         print(f"{code}: {status_counts[code]}")
 
 try:
+    # Read from stdin line by line
     for i, line in enumerate(sys.stdin, 1):
         parts = line.split()
-        
+
         # Skip lines that do not have enough parts
         if len(parts) < 7:
             continue
@@ -61,6 +62,7 @@ try:
             print_stats(total_size, status_counts)
 
 except KeyboardInterrupt:
+    # Handle KeyboardInterrupt and print stats before exiting
     print_stats(total_size, status_counts)  # Print stats on keyboard interruption
-    raise  # Re-raise the KeyboardInterrupt
+    sys.exit(0)  # Gracefully exit after printing the stats
 
