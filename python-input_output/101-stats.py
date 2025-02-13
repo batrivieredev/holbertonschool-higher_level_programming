@@ -1,4 +1,4 @@
-#!/usr/bin/env python3
+#!/usr/bin/python3
 import sys
 
 """
@@ -21,7 +21,7 @@ status_counts = {}
 def print_stats(total_size, status_counts):
     """
     Prints the accumulated metrics (file size and status code counts).
-    
+
     This function prints the total file size and the number of occurrences of each
     status code in the log, sorted by the status code.
 
@@ -44,19 +44,19 @@ try:
         # Skip lines that do not have enough parts
         if len(parts) < 7:
             continue
-        
+
         try:
             status_code = int(parts[-2])  # Extract status code
             file_size = int(parts[-1])    # Extract file size
         except ValueError:
             continue  # Skip lines with invalid number values
-        
+
         total_size += file_size  # Accumulate file size
-        
+
         # Count valid status codes
         if status_code in valid_statuses:
             status_counts[status_code] = status_counts.get(status_code, 0) + 1
-        
+
         # Print stats every 10 lines
         if i % 10 == 0:
             print_stats(total_size, status_counts)
