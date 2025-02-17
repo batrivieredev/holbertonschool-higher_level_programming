@@ -1,0 +1,40 @@
+**Différences entre HTTP et HTTPS**
+
+1. **Sécurité** : HTTP ne chiffre pas les données transmises entre le client et le serveur, ce qui permet à des attaquants potentiels d'intercepter et de lire ces données. HTTPS, en revanche, utilise le protocole SSL/TLS pour chiffrer ces communications, garantissant ainsi la confidentialité et l'intégrité des données.
+2. **Authentification** : HTTPS assure l'authentification du serveur grâce à des certificats SSL/TLS, ce qui empêche les attaques de type "Man-in-the-Middle".
+3. **Usage** : Les sites manipulant des données sensibles (paiements en ligne, connexions utilisateur) doivent impérativement utiliser HTTPS pour assurer la sécurité des utilisateurs.
+4. **Performance et SEO** : HTTPS est souvent plus rapide que HTTP grâce aux améliorations récentes des protocoles. De plus, Google favorise les sites HTTPS dans son classement SEO.
+
+---
+
+**Structure d'une requête et réponse HTTP**
+
+1. **Requête HTTP** :
+   - **Méthode** : (GET, POST, PUT, DELETE, etc.)
+   - **URL** : Ressource demandée
+   - **Headers** : Métadonnées (User-Agent, Content-Type, etc.)
+   - **Body** (optionnel) : Contenu envoyé au serveur (utile pour POST, PUT)
+
+2. **Réponse HTTP** :
+   - **Statut** : Code indiquant le résultat de la requête (200, 404, etc.)
+   - **Headers** : Informations supplémentaires (Content-Type, Set-Cookie, etc.)
+   - **Body** : Données retournées (HTML, JSON, etc.)
+
+---
+
+**Liste des méthodes HTTP et leurs usages**
+
+1. **GET** : Récupérer des informations (ex: affichage d'une page web)
+2. **POST** : Envoyer des données au serveur (ex: formulaire de connexion)
+3. **PUT** : Mettre à jour une ressource existante (ex: modification d'un profil utilisateur)
+4. **DELETE** : Supprimer une ressource (ex: suppression d'un commentaire)
+
+---
+
+**Liste des codes de statut HTTP courants**
+
+1. **200 OK** : La requête a réussi et la réponse contient les données demandées.
+2. **301 Moved Permanently** : La ressource a définitivement changé d'adresse.
+3. **400 Bad Request** : La requête est mal formulée ou invalide.
+4. **404 Not Found** : La ressource demandée n'existe pas sur le serveur.
+5. **500 Internal Server Error** : Une erreur interne du serveur est survenue.
