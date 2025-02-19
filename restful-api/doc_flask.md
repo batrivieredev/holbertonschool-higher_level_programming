@@ -196,13 +196,3 @@ if __name__ == "__main__":
 ```
 
 ---
-
-## 🔥 Améliorations Possibles
-
-✅ **Utilisation d'une base de données** : Actuellement, les données sont stockées en mémoire. Pour les rendre persistantes, vous pouvez utiliser SQLite avec SQLAlchemy.
-
-✅ **Ajout d'authentification** : On peut protéger certaines routes en utilisant Flask-Login ou JWT.
-
-✅ **Ajout d'une route DELETE** : Une route DELETE `/users/<username>` permettrait de supprimer un utilisateur.
-
-N'hésitez pas à contribuer et à améliorer ce projet ! 🎉
