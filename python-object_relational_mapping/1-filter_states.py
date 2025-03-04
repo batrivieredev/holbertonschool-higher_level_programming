@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 """
-lists all states with a name starting with N(upper N)
-from the database hbtn_0e_0_usa
+répertorie tous les états dont le nom commence par N (N majuscule)
+de la base de données hbtn_0e_0_usa
 
 """
 
