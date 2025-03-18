@@ -1,1 +1,25 @@
+# Ignore l'environnement virtuel
 venv/
+
+# Ignore les fichiers Python compilés
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Ignore les fichiers de logs
+*.log
+
+# Ignore les fichiers de dépendances installées par pip
+pip-log.txt
+pip-delete-this-directory.txt
+
+# Ignore les fichiers spécifiques à l'IDE (VSCode, PyCharm, etc.)
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Ignore les fichiers de configuration du système
+.DS_Store
+Thumbs.db
